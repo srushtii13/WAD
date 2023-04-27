@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Patient Registeration Form</title>
+  </head>
+
+  <body>
+    <main class="mt-5 pt-3">
+      <div class="container">
+        <div class="container-fluid px-4">
+          <div class="row g-3 my-2">
+            <div class="rounded">
+              <div class="h1 my-4 text-center border">Patient Registration Form </div>
+              <form id="patientForm">
+                <div class="border p-3">
+                  <div class="row">
+                    <div class="col-md-6 mt-md-3 mt-3">
+                      <label>First Name</label>
+                      <input
+                        type="text"
+                        id="firstName"
+                        class="form-control"
+                        required
+                      />
+                    </div>
+                    <div class="col-md-6 mt-md-3 mt-3">
+                      <label>Last Name</label>
+                      <input
+                        type="text"
+                        id="lastName"
+                        class="form-control"
+                        required
+                      />
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6 mt-md-3 mt-3">
+                      <label>Date of Birth</label>
+                      <input
+                        type="date"
+                        id="dob"
+                        class="form-control"
+                        required
+                      />
+                    </div>
+                    <div class="col-md-6 mt-md-3 mt-3">
+                      <label>Gender</label>
+                      <div class="d-flex align-items-center mt-2">
+                        <label class="option">
+                          <input type="radio" name="gender" value="male" />
+                          Male <span class="checkmark"></span>
+                        </label>
+                        <label class="option ms-4">
+                          <input type="radio" name="gender" value="female" />
+                          Female <span class="checkmark"></span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6 mt-md-3 mt-3">
+                      <label>Age</label>
+                      <input
+                        type="number"
+                        id="age"
+                        class="form-control"
+                        required
+                      />
+                    </div>
+                    <div class="col-md-6 mt-md-3 mt-3">
+                      <label>Phone Number</label>
+                      <input
+                        type="tel"
+                        id="contactNo"
+                        class="form-control"
+                        required
+                      />
+                    </div>
+                  </div>
+                  <div class="my-md-3 my-3">
+                    <label>Disease</label>
+                    <select id="sub" required>
+                      <option value="" selected hidden>Choose Option</option>
+                      <option value="Dengue">Dengue</option>
+                      <option value="Typhoid">Typhoid</option>
+                      <option value="Pneumonia">Pneumonia</option>
+                      <option value="Food Poisoning">Food Poisoning</option>
+                      <option value="Other">Other</option>
+
+                    </select>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6 mt-md-3 mt-3">
+                      <label>Patient ID</label>
+                      <input
+                        type="text"
+                        id="Pid"
+                        class="form-control"
+                        required
+                      />
+                    </div>
+                    <div class="col-md-6 mt-md-3 mt-3">
+                      <label>Registration Date</label>
+                      <input
+                        type="date"
+                        id="registrationDate"
+                        class="form-control"
+                        required
+                      />
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6 mt-md-3 mt-3">
+                      <label>Address</label>
+                      <input
+                        type="text"
+                        id="address"
+                        class="form-control"
+                        required
+                      />
+                    </div>
+                    <div class="col-md-6 mt-md-3 mt-3">
+                      <label>Type of Doctor</label>
+                      <select id="sub" required>
+                        <option value="" selected hidden>Choose Option</option>
+                        <option value="Neurologist">Neurologist</option>
+                        <option value="Pediatrician">Pediatrician</option>
+                        <option value="Cardiologist">Cardiologist</option>
+                        <option value="Dermatologist">Dermatologist</option>
+                        <option value="Other">Other</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="d-grid mt-4">
+                    <button
+                      class="btn btn-primary btn-lg"
+                      id="btnAddPatient"
+                      type="button"
+                    >
+                      Add Patient
+                    </button><br>
+                    <div class="col-sm-12 text-right">
+                      <button class="btn btn-default" id="setLS">Set LS</button> &nbsp;
+                      <button class="btn btn-default" id="display" style="background-color:black;color:white;"
+                      <input type="display" onClick="myFunction()" value="" class="button" />Display Patient Data
+                      <script>
+                      function myFunction() {
+                         window.location.href = "display-data.html";
+                     }
+                     </script>
+                      </button> &nbsp;
+                      <!--<button class="btn btn-primary" id="sendLS">Send To Server</button> &nbsp; -->
+                      <button class="btn btn-danger" id="clearLS">Clear LS</button>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="http://code.jquery.com/jquery.js"></script>
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<!-- START "jQuery Source" -->
+<script>
+$(function() {
+  $('#setLS').click(function(e) {
+    e.preventDefault();
+    var firstName = $('#firstName').val();
+    window.localStorage.setItem("PortalLoginApp.firstName", firstName);
+  });
+  $('#clearLS').click(function(e) {
+    e.preventDefault();
+    localStorage.clear(); 
+    $('#firstName').val('');
+  });
+  $('#sendLS').click(function(e) {
+    e.preventDefault();
+    var firstName = window.localStorage.getItem("PortalLoginApp.firstName");
+    $.ajax({
+           url: 't1603.php',
+           data: {firstName: firstName},
+           type: 'POST' 
+    }).done(function(resp) {
+          alert(resp);
+    });
+   });
+
+   $('#setLS').click(function(e) {
+    e.preventDefault();
+    var lastName = $('#lastName').val();
+    window.localStorage.setItem("PortalLoginApp.lastName", lastName);
+  });
+  $('#clearLS').click(function(e) {
+    e.preventDefault();
+    localStorage.clear(); 
+    $('#lastName').val('');
+  });
+  $('#sendLS').click(function(e) {
+    e.preventDefault();
+    var lastName = window.localStorage.getItem("PortalLoginApp.lastName");
+    $.ajax({
+           url: 't1603.php',
+           data: {lastName: lastName},
+           type: 'POST' 
+    }).done(function(resp) {
+          alert(resp);
+    });
+   });
+
+   $('#setLS').click(function(e) {
+    e.preventDefault();
+    var dob = $('#dob').val();
+    window.localStorage.setItem("PortalLoginApp.dob", dob);
+  });
+  $('#clearLS').click(function(e) {
+    e.preventDefault();
+    localStorage.clear(); 
+    $('#dob').val('');
+  });
+  $('#sendLS').click(function(e) {
+    e.preventDefault();
+    var dob = window.localStorage.getItem("PortalLoginApp.dob");
+    $.ajax({
+           url: 't1603.php',
+           data: {dob: dob},
+           type: 'POST' 
+    }).done(function(resp) {
+          alert(resp);
+    });
+   });
+});
+</script>
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/jquery-3.5.1.js"></script>
+    <script src="./js/myscript.js"></script>
+  </body>
+</html>
